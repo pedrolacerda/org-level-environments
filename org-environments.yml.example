@@ -1,0 +1,39 @@
+environments:
+  - name: dev
+    repositories:
+        - teste*
+    variables:
+      - name: foo
+        value: bar
+      - name: baz
+        value: qux
+    secrets:
+      - key: foo
+        value: bar
+      - key: baz
+        value: qux
+    reviewers:
+      usernames: 
+        - myuser
+      teams:
+        - team1
+        - team2
+    
+  - name: prod
+    repositories:
+        - teste*
+    variables:
+      - name: foo
+        value: bar
+      - name: baz
+        value: qux
+    secrets:
+      - key: foo
+        value: bar
+      - key: baz
+        value: qux
+    reviewers:
+      usernames: 
+        - myuser
+      teams:
+        - team1
