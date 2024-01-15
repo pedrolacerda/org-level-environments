@@ -4,7 +4,20 @@
 
 This project is a GitHub App built with [Probot](https://github.com/probot/probot) that sets default environments for all repositories in an organization.
 
+For every new repo created, the App will create environments associated with its name pattern, simulating org-level environments.
+
+### Relevant notes on the App behavior
+
+- All the users and teams listed as reviewers will gain `write` access to the repo
+- Secrets won't be created in the environment, instead, org-level secrets will gain access to the repo (#2)
+- The App works for repos created after the App is installed. It doesn't work backwards to apply the role for existing repos (#4)
+- Users and teams are not case-sensitive. If they don't exist in the org, they won't be created, the entry is skipped instead.
+
 ## Setup
+
+### Configuration
+
+Create a `.github-private` repo within your organization. This repo should have a `org-environments.yml` file in the root. Check the `org-environments.yml.example` to check the pattern to be used.
 
 ```sh
 # Install dependencies
@@ -13,6 +26,7 @@ npm install
 # Run the bot
 npm start
 ```
+
 
 ## Contributing
 

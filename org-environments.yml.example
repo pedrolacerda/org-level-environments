@@ -1,39 +1,37 @@
-environments:
-  - name: dev
-    repositories:
+environments:             # root of the file
+  - name: dev             # name of the environment (can have multiple envs with the same name)
+    repositories:         # array with the names patterns on which the environment will be created
         - repo-pattern*
-    variables:
-      - name: foo
-        value: bar
-      - name: baz
-        value: qux
-    secrets:
-      - key: foo
-        value: bar
-      - key: baz
-        value: qux
-    reviewers:
+    reviewers:            # reviewers can be users or teams
       usernames: 
         - myuser
       teams:
         - team1
         - team2
-    
-  - name: prod
-    repositories:
-        - repo-pattern*
     variables:
       - name: foo
         value: bar
       - name: baz
         value: qux
     secrets:
-      - key: foo
-        value: bar
-      - key: baz
-        value: qux
+      - secret1
+      - secret2
+      - secret3
+    
+  - name: prod
+    repositories:
+        - repo-pattern*
     reviewers:
       usernames: 
         - myuser
       teams:
         - team1
+    variables:
+      - name: foo
+        value: bar
+      - name: baz
+        value: qux
+    secrets:
+      - secret1
+      - secret2
+      - secret3
