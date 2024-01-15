@@ -1,7 +1,7 @@
 environments:
   - name: dev
     repositories:
-        - teste*
+        - repo-pattern*
     variables:
       - name: foo
         value: bar
@@ -21,7 +21,7 @@ environments:
     
   - name: prod
     repositories:
-        - teste*
+        - repo-pattern*
     variables:
       - name: foo
         value: bar
