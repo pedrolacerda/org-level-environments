@@ -8,13 +8,13 @@ environments:             # root of the file
       teams:
         - team1
         - team2
-    variables:
+    variables:            # Variables will created even though they exist in the org
       - name: foo
         value: bar
       - name: baz
         value: qux
     secrets:
-      - secret1
+      - secret1           # Secrets must exist at the org level
       - secret2
       - secret3
     
