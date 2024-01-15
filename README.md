@@ -9,15 +9,15 @@ For every new repo created, the App will create environments associated with its
 ### Relevant notes on the App behavior
 
 - All the users and teams listed as reviewers will gain `write` access to the repo
-- Secrets won't be created in the environment, instead, org-level secrets will gain access to the repo (#2)
-- The App works for repos created after the App is installed. It doesn't work backwards to apply the role for existing repos (#4)
+- Secrets won't be created in the environment, instead, org-level secrets will gain access to the repo ([#2](https://github.com/pedrolacerda/org-level-environments/issues/2))
+- The App works for repos created after the App is installed. It doesn't work backwards to apply the role for existing repos ([#4](https://github.com/pedrolacerda/org-level-environments/issues/4))
 - Users and teams are not case-sensitive. If they don't exist in the org, they won't be created, the entry is skipped instead.
 
 ## Setup
 
 ### Configuration
 
-Create a `.github-private` repo within your organization. This repo should have a `org-environments.yml` file in the root. Check the `org-environments.yml.example` to check the pattern to be used.
+Create a `.github-private` repo within your organization. This repo should have a `org-environments.yml` file in the root. Check the [`org-environments.yml.example`](https://github.com/pedrolacerda/org-level-environments/blob/main/org-environments.yml.example) to check the pattern to be used.
 
 ```sh
 # Install dependencies
